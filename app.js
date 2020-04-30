@@ -342,38 +342,59 @@ const scrollHandler = (e,{products=[],services=[]}) => {
         initialScrollMobile=true;
     }
 
-
+    //TODO: product scroll animation - right>left
     products.forEach((product)=>{
-        let element = document.getElementById(product.name+'-image')
 
-            let centerOffset = element.offsetTop - element.offsetHeight/2;
-
-            element.style.transform = `translateX(${ (centerOffset - scrollY)>0?(centerOffset - scrollY):0}px)`
-
-        element.style.opacity = scrollY>centerOffset?1:Math.pow(scrollY/centerOffset,4);
+        slideInTransition({
+            id:product.name+'-image',
+            axis:'X',
+            offset:-100,
+            opacityMultiplier: 4
+        })
     })
 
-    let element=null
-    let centerOffset=null
-
     //TODO: services scroll animation - right>left
-    element = document.getElementById('services')
-    centerOffset = element.offsetTop - element.offsetHeight/2;
-    element.style.transform = `translateX(${ (centerOffset - scrollY)>300?(centerOffset - scrollY):0}px)`
-    element.style.opacity = scrollY>centerOffset?1:Math.pow(scrollY/centerOffset,2);
-
-
-    //TODO: what-we-do scroll animation - bottom>top
-    element = document.getElementById('what-we-do')
-    centerOffset = element.offsetTop - element.offsetHeight/2;
-    element.style.transform = `translateY(${ (centerOffset - scrollY)>0?(centerOffset - scrollY):0}px)`
-    element.style.opacity = scrollY>centerOffset?1:Math.pow(scrollY/centerOffset,4);
+    slideInTransition({
+        id:'services',
+        axis:'X',
+        offset: 400
+    })
 
     //TODO: footer scroll animation - bottom>top
-    element = document.getElementById('footer')
-    centerOffset = element.offsetTop - element.offsetHeight/2;
-    element.style.transform = `translateY(${ (centerOffset - scrollY)>0?(centerOffset - scrollY):0}px)`
-    element.style.opacity = scrollY>centerOffset?1:Math.pow(scrollY/centerOffset,0);
+    slideInTransition({
+        id:'footer',
+        axis:'Y',
+        offset: 100
+    })
+
+    //TODO: what-we-do scroll animation - bottom>top
+
+    // element = document.getElementById('what-we-do')
+    // centerOffset = element.offsetTop - element.offsetHeight/2;
+    // element.style.transform = `translateY(${ (centerOffset - scrollY)>0?(centerOffset - scrollY):0}px)`
+    // element.style.opacity = scrollY>centerOffset?1:Math.pow(scrollY/centerOffset,4);
+
+
+
+}
+
+const slideInTransition = ({
+                               id,
+                               axis = 'X',
+                                negative=false,
+                               offset = 0,
+                                opacityMultiplier = 0
+                           }
+) => {
+
+    let scrollY = window.scrollY
+    let element = document.getElementById(id)
+    let centerOffset = element.offsetTop - element.offsetHeight/2;
+
+    if(id.startsWith('services'))
+        console.log(scrollY,centerOffset)
+    element.style.transform = `translate${axis.toUpperCase()}(${negative?'-':''}${ (centerOffset - scrollY)>offset?(centerOffset - scrollY)-offset:0}px)`
+    element.style.opacity = (scrollY>centerOffset)?'1':Math.pow(scrollY/centerOffset,opacityMultiplier).toString();
 
 }
 

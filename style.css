@@ -338,7 +338,7 @@ margin-top:60px;
     height: 100vh;
     box-sizing: border-box;
     width: 100%;
-    position: relative;
+    /*position: relative;*/
     padding: 40px 0px;
 }
 
@@ -409,8 +409,11 @@ margin-top:60px;
 }
 
 .product-image {
-    position: absolute;
-    transform: translateX(300px);
+
+    /*height: 100vh;*/
+    /*box-sizing: border-box;*/
+    /*width: 100%;*/
+    /*transform: translateX(300px);*/
     width: 60%;
 }
 
