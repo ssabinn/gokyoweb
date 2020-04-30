@@ -1,0 +1,99 @@
+{
+  "title": "Gokyo Labs",
+
+  "header": {
+    "logoUrl": "assets/logo.svg",
+    "productsIconUrl": "assets/menu-24px.svg",
+    "menu": {
+      "items": [
+        {
+          "name": "Contact Us",
+          "iconUrl": "assets/contact.svg",
+
+          "link": ""
+        }
+      ]
+    }
+  },
+
+  "home": {
+
+    "title": "We build products and solutions for data related problems.",
+    "subtitle": ["Automation and analytics","business process management"],
+    "imageUrl": "assets/main.png"
+  },
+
+  "whatWeDo": {
+    "title": "We do heavy investment in R&D and Designs.",
+    "subtitle": "We build detailed use cases and generalize the problems to build a generalized solution"
+  },
+
+  "whoWeAre": {
+    "title": "We are a team of Engineers, Designers, MBAs and CAs",
+    "subtitle": "Our team of experts can help you strategize, automate and analyse your business process"
+  },
+
+  "products": [
+    {
+      "name": "Reconciler",
+      "iconUrl": "assets/reconciler_icon.svg",
+      "iconLargeUrl": "assets/reconciler_icon_large.svg",
+      "imageUrl": "assets/reconciler.png",
+      "fullName": "Gokyo Reconciler",
+      "description": "Automated reconciliation of financial data, follow-ups, activity logs, and reporting.",
+      "links": {
+        "demo": "",
+        "view": ""
+      }
+    },
+    {
+      "name": "Collateral",
+      "iconUrl": "assets/collateral_icon.svg",
+      "iconLargeUrl": "assets/reconciler_icon_large.svg",
+      "imageUrl": "assets/reconciler.png",
+      "fullName": "Collateral Management System",
+      "description": "Identification, valuation, recording, monitoring, analysis and reporting of primary and secondary collateral of BFIs. ",
+      "new": true,
+      "links": {
+        "demo": "",
+        "view": ""
+      }
+    }
+  ],
+
+  "services": [
+    {
+      "name": "Omnichannel Initiatives",
+      "iconUrl": "assets/omnichannel_initiatives.svg"
+    },
+    {
+      "name": "Business Process Management",
+      "iconUrl": "assets/business_process_management.svg"
+    },
+    {
+      "name": "Automation and Analytics",
+      "iconUrl": "assets/automation_and_analytics.svg"
+    },
+    {
+      "name": "Custom Solutions",
+      "iconUrl": "assets/custom_solutions.svg"
+    }
+  ],
+
+  "footer": {
+    "title": "Talk to us.",
+    "email": {
+      "label": "Email us",
+      "text": "hey@gokyolabs.com"
+    },
+    "address": {
+      "label": "Find us",
+      "text": "Manbhawan-14, Lalitpur",
+      "link": {
+        "text": "Locate us on Google Maps",
+        "url": "https://www.google.com/maps/place/RARA+Labs/@27.6573756,85.3235313,13z/data=!4m8!1m2!2m1!1srara+labs!3m4!1s0x0:0x7ecca74b6ded7509!8m2!3d27.6662545!4d85.3153825"
+      }
+    },
+    "copyright": "Copyright © 2020 Gokyo Labs . Privacy & Terms"
+  }
+}
