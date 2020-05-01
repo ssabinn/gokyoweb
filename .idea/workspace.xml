@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="394c1728-7848-465a-b3b5-202af3953803" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/collateral.svg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/collateral.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data.json" beforeDir="false" afterPath="$PROJECT_DIR$/data.json" afterDir="false" />
-    </list>
+    <list default="true" id="394c1728-7848-465a-b3b5-202af3953803" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -39,8 +34,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="137">
-              <caret line="320" column="18" selection-start-line="320" selection-start-column="18" selection-end-line="320" selection-end-column="18" />
+            <state relative-caret-position="256">
+              <caret line="327" lean-forward="true" selection-start-line="327" selection-end-line="327" />
               <folding>
                 <element signature="e#18#24#0" expanded="true" />
                 <element signature="e#25#31#0" expanded="true" />
@@ -142,11 +137,6 @@
               <item name="gokyoweb" type="b2602c69:ProjectViewProjectNode" />
               <item name="gokyoweb" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="gokyoweb" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gokyoweb" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -228,16 +218,15 @@
       <workItem from="1588242178731" duration="948000" />
       <workItem from="1588254386094" duration="6000" />
       <workItem from="1588314412477" duration="3377000" />
-      <workItem from="1588327574651" duration="1399000" />
+      <workItem from="1588327574651" duration="1647000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="91795000" />
+    <option name="totallyTimeSpent" value="92043000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24983476" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -323,8 +312,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="320" column="18" selection-start-line="320" selection-start-column="18" selection-end-line="320" selection-end-column="18" />
+        <state relative-caret-position="256">
+          <caret line="327" lean-forward="true" selection-start-line="327" selection-end-line="327" />
           <folding>
             <element signature="e#18#24#0" expanded="true" />
             <element signature="e#25#31#0" expanded="true" />
