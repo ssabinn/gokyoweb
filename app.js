@@ -137,7 +137,7 @@ let element = document.createElement('div')
     </div>
     <div class="home-buttons">
     ${
-        menu.items.map((item)=> appButton(`<img src="${item.iconUrl}" /> &nbsp;&nbsp; ${item.name}`,'',false,false,true))
+        menu.items.map((item)=> appButton(`<img src="${item.iconUrl}" /> &nbsp;&nbsp; ${item.name}`,item.link,false,false,true))
             
             }
     <br/>
@@ -203,7 +203,7 @@ const whoWeAreElement = ({title,subtitle,services})=>{
 const footerElement = ({title, email, address, copyright, products=[]}) =>{
     let element = document.createElement('div')
     element.innerHTML = `
-<div class="footer" >
+<div class="footer" id="Contact Us">
     <div class="container" id="footer">
     <div class="footer-top">
     <div class="footer-menu footer-left inverse">
@@ -318,8 +318,8 @@ export function showDropdown () {
 
 
 const appButton = (text, link, hasArrow,reverse,large) => `<a class="app-button ${large?'large-button':''} ${reverse?'reverse-button':''} "
-href="${link}"
-target="_blank"
+href="${link || '#'}"
+target=${link?"_blank":"_self"}
 >
 ${large?text:text.toUpperCase()}
 
@@ -358,15 +358,15 @@ const scrollHandler = (e,{products=[],services=[]}) => {
     let mobileAnimationElement = document.getElementById('home-animation-mobile');
 
     //TODO: previous mobile scroll animation
-    if(scrollY>=(mobileAnimationElement.offsetTop - mobileAnimationElement.offsetHeight/2) && !initialScrollMobile){
-        homeAnimationMobile.play();
-        initialScrollMobile=true;
-    }
+    // if(scrollY>=(mobileAnimationElement.offsetTop - mobileAnimationElement.offsetHeight/2) && !initialScrollMobile){
+    //     homeAnimationMobile.play();
+    //     initialScrollMobile=true;
+    // }
 
     //TODO: new mobile scroll animation
 
-    let mobileScrollMultiplier = 0.8;
-    let mobileScrollOffset = 200;
+    let mobileScrollMultiplier = 0.7;
+    let mobileScrollOffset = 100;
     let mobileAnimationFrame =
         parseInt(scrollY*mobileScrollMultiplier-mobileScrollOffset)>homeAnimationMobile.getDuration(true)
             ?

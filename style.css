@@ -340,7 +340,7 @@ margin-top:60px;
     font-size: var(--font-small);
 }
 .product{
-    height: 100vh;
+    /*height: 100vh;*/
     box-sizing: border-box;
     width: 100%;
     /*position: relative;*/
@@ -541,10 +541,10 @@ margin-top:60px;
     }
 
     .product-image{
-        position: relative;
-        top: 0px;
-        left: 0px;;
-        max-height: none;
+        /*position: relative;*/
+        /*top: 0px;*/
+        /*left: 0px;;*/
+        /*max-height: none;*/
         margin: 20px 0 30px;
         width: 100%;
     }
