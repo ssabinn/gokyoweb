@@ -42,8 +42,8 @@
       "fullName": "Gokyo Reconciler",
       "description": "Automated reconciliation of financial data, follow-ups, activity logs, and reporting.",
       "links": {
-        "demo": "http://recon.gokyolabs.com",
-        "view": "http://recon.gokyolabs.com"
+        "demo": null,
+        "view": null
       }
     },
     {
@@ -55,8 +55,8 @@
       "description": "Identification, valuation, recording, monitoring, analysis and reporting of primary and secondary collateral of BFIs. ",
       "new": true,
       "links": {
-        "demo": "http://collateral.gokyolabs.com",
-        "view": "http://collateral.gokyolabs.com"
+        "demo": null,
+        "view": null
       }
     }
   ],

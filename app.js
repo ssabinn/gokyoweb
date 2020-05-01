@@ -65,7 +65,10 @@ const headerElement = ({header, products=[]}) => {
         <div class="header-menu">
         ${
          [...products, ...header.menu.items].map((item)=> `
-         <a href="#${item.name}" class="header-menu-item pointer no-underline">
+         <a 
+         href="${ item.link || (item.links || {}).view || '#'}"
+         class="header-menu-item pointer no-underline">
+         
          <img src=${item.iconUrl} class="header-menu-item-icon" />
         ${item.name}
         ${item.new? `<div class="header-menu-item-label">NEW</div>`:''}
@@ -98,7 +101,7 @@ const dropdownElement = (products=[]) => {
     element.innerHTML=`
     <div class="container">
     ${
-        products.map((product)=>`<a href="${product.links.demo}" class="dropdown-item no-underline">
+        products.map((product)=>`<a href="${product.links.view || '#'}" class="dropdown-item no-underline">
 <div>
 <img src="${product.iconLargeUrl}"/>
 <div>
@@ -331,6 +334,8 @@ const scrollHandler = (e,{products=[],services=[]}) => {
 
     let scrollY = window.scrollY
 
+
+
  //    TODO: previous animation (scroll triggered but not scroll driven)
  //    if(
  //        scrollY>=40 && !initialScroll
@@ -468,8 +473,6 @@ const slideInTransition = ({
     let element = document.getElementById(id)
     let centerOffset = element.offsetTop - element.offsetHeight/2;
 
-    if(id.startsWith('services'))
-        console.log(scrollY,centerOffset)
     element.style.transform = `translate${axis.toUpperCase()}(${negative?'-':''}${ (centerOffset - scrollY)>offset?(centerOffset - scrollY)-offset:0}px)`
     element.style.opacity = (scrollY>centerOffset)?'1':Math.pow(scrollY/centerOffset,opacityMultiplier).toString();
 
