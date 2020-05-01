@@ -387,15 +387,25 @@ const scrollHandler = (e,{products=[],services=[]}) => {
     })
 
     //TODO: product scroll animation - right>left
+
     products.forEach((product)=>{
 
-        slideInTransition({
-            id:product.name+'-image',
-            axis:'X',
-            offset:-200,
-            opacityMultiplier: 4
-        })
-
+        if(window.matchMedia("(max-width: 1024px)")){
+            slideInTransition({
+                id:product.name+'-image',
+                axis:'X',
+                offset: 200,
+                opacityMultiplier: 4
+            })    
+        }else{
+            slideInTransition({
+                id:product.name+'-image',
+                axis:'X',
+                offset:-200,
+                opacityMultiplier: 4
+            })
+        }
+        
         slideInTransition({
             id:product.name+'-detail',
             axis:'y',
@@ -403,6 +413,7 @@ const scrollHandler = (e,{products=[],services=[]}) => {
             opacityMultiplier: 2
         })
     })
+
 
     //TODO: services scroll animation - right>left
     services.forEach((service, index)=>{
