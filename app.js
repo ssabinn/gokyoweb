@@ -160,11 +160,11 @@ const whatWeDoElement = ({title,subtitle})=>{
     <div class="what-we-do" id="what-we-do"><div class="container">
     <div class="home-image" id="home-animation"></div>
     <div class="home-image-mobile" id="home-animation-mobile"></div>
-    <div class="title">
+    <div class="title" id="rndtitle">
     ${title}
     </div>
     <br/>
-    <div class="description">
+    <div class="description" id="rnddesc">
     ${subtitle}
     </div>
     </div>
@@ -179,10 +179,10 @@ const whoWeAreElement = ({title,subtitle,services})=>{
     <div class="who-we-are">
     <div class="container">
 
-    <div class="title">
+    <div id="whotitle" class="title">
         ${title}
     </div>
-    <div class="description">
+    <div id="whodesc" class="description">
          ${subtitle}
     </div>
     <div class="services" id="services">
@@ -259,7 +259,7 @@ const productsElement = (products=[]) => {
         0${index+1}
 </div>
 
-<div class="product-title">
+<div id="${product.name}-detail" class="product-title">
     <div class="product-product">PRODUCT</div>
     <div class="title no-margin", style="text-align: start; max-width: 450px;">
     ${product.fullName}
@@ -323,8 +323,9 @@ target="_blank"
 >
 ${large?text:text.toUpperCase()}
 
-${hasArrow?`&nbsp;&nbsp;<object type="image/svg+xml" data="assets/${reverse?'arrow_right_white':'arrow_right'}.svg"></object>`:''}
+${hasArrow?`&nbsp;&nbsp;<object type="image/svg+xml" data="assets/${reverse?'arrow_right':'arrow_right_white'}.svg"></object>`:''}
 </a>`
+
 
 const scrollHandler = (e,{products=[],services=[]}) => {
 
@@ -343,9 +344,8 @@ const scrollHandler = (e,{products=[],services=[]}) => {
 
     //TODO: new scroll driven animation
 
-
-    let scrollMultiplier = 0.8; //ratio of animation speed with respect to pixels scrolled (lower means slower animation)
-    let scrollOffset = 60; //animation starts only after this amount of scroll
+    let scrollMultiplier = 0.9; //ratio of animation speed with respect to pixels scrolled (lower means slower animation)
+    let scrollOffset = 40; //animation starts only after this amount of scroll
     let animationFrame =
         parseInt(scrollY*scrollMultiplier-scrollOffset)>homeAnimation.getDuration(true)
             ?
@@ -375,6 +375,16 @@ const scrollHandler = (e,{products=[],services=[]}) => {
             parseInt(scrollY*mobileScrollMultiplier-mobileScrollOffset);
     homeAnimationMobile.goToAndStop(mobileAnimationFrame>0?mobileAnimationFrame:0,true)
 
+    slideInTransition({
+        id:'rndtitle',
+        axis:'Y',
+        offset: 450
+    })
+    slideInTransition({
+        id:'rnddesc',
+        axis:'Y',
+        offset: 450
+    })
 
     //TODO: product scroll animation - right>left
     products.forEach((product)=>{
@@ -382,15 +392,35 @@ const scrollHandler = (e,{products=[],services=[]}) => {
         slideInTransition({
             id:product.name+'-image',
             axis:'X',
-            offset:-100,
+            offset:-200,
             opacityMultiplier: 4
+        })
+
+        slideInTransition({
+            id:product.name+'-detail',
+            axis:'y',
+            offset: 300,
+            opacityMultiplier: 2
         })
     })
 
     //TODO: services scroll animation - right>left
+    services.forEach((service, index)=>{
+        slideInTransition({
+            id:service.name,
+            axis:'Y',
+            offset: 500 - index*50
+        })
+    })
+
     slideInTransition({
-        id:'services',
-        axis:'X',
+        id:'whotitle',
+        axis:'Y',
+        offset: 400
+    })
+    slideInTransition({
+        id:'whodesc',
+        axis:'Y',
         offset: 400
     })
 
@@ -398,8 +428,10 @@ const scrollHandler = (e,{products=[],services=[]}) => {
     slideInTransition({
         id:'footer',
         axis:'Y',
-        offset: 0
+        offset: -100,
+        opacityMultiplier: 50
     })
+    
 
     //TODO: what-we-do scroll animation - bottom>top
 
@@ -413,12 +445,12 @@ const scrollHandler = (e,{products=[],services=[]}) => {
 }
 
 const slideInTransition = ({
-                               id,
-                               axis = 'X',
-                                negative=false,
-                               offset = 0,
-                                opacityMultiplier = 0
-                           }
+        id,
+        axis = 'X',
+        negative=false,
+        offset = 0,
+        opacityMultiplier = 0
+    }
 ) => {
 
     let scrollY = window.scrollY

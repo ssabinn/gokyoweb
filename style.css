@@ -25,10 +25,12 @@ body{
     overflow-x: hidden;
     font-size: 10px;
     background: var(--background-color);
+    box-sizing: border-box;
 }
 
 #root{
-    overflow-x: hidden;
+    overflow: hidden;
+    box-sizing: border-box;
 }
 
 #dropdown-menu{
@@ -221,6 +223,9 @@ body{
     color: #000000;
 
 }
+#whodesc {
+    margin-top: 30px;
+}
 
 .inverse{
     color: white;
@@ -375,7 +380,7 @@ margin-top:60px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(3, 26, 107, 0.05);
+    color: rgba(3, 26, 107, 0.05);
     border-radius: 10px;
 
     margin-right: 14px;
@@ -388,9 +393,21 @@ margin-top:60px;
     font-size: 12px;
     line-height: 150%;
     /* identical to box height, or 18px */
-
-
     color: #031A6B;
+}
+.app-button:hover{
+    background: rgba(3, 26, 107, 0.2);
+    /* color: #fff !important; */
+    cursor: pointer;
+}
+.app-button:first-child{
+    background: var(--primary-color);
+    color: #fff ;
+}
+.app-button:first-child:hover {
+    background: var(--primary-color);
+    color: #fff !important;
+
 }
 
 .large-button{
