@@ -40,7 +40,7 @@ const RenderPage = (data) => {
         renderer: 'svg',
         loop: false,
         autoplay: false,
-        path: 'assets/main_animation.json' // the path to the animation json
+        path: 'assets/main_animation.json', // the path to the animation json
     });
 
     homeAnimationMobile = lottie.loadAnimation({
@@ -330,17 +330,51 @@ const scrollHandler = (e,{products=[],services=[]}) => {
 
     let scrollY = window.scrollY
 
-    if(scrollY>=40 && !initialScroll){
+ //    TODO: previous animation (scroll triggered but not scroll driven)
+ //    if(
+ //        scrollY>=40 && !initialScroll
+ // ){
+ //
+ //        homeAnimation.play();
+ //        homeAnimation.setSpeed(3);
+ //        initialScroll=true;
+ //    }
 
-        homeAnimation.play();
-        homeAnimation.setSpeed(3);
-        initialScroll=true;
-    }
+
+    //TODO: new scroll driven animation
+
+
+    let scrollMultiplier = 0.8; //ratio of animation speed with respect to pixels scrolled (lower means slower animation)
+    let scrollOffset = 60; //animation starts only after this amount of scroll
+    let animationFrame =
+        parseInt(scrollY*scrollMultiplier-scrollOffset)>homeAnimation.getDuration(true)
+            ?
+            homeAnimation.getDuration(true)
+            :
+            parseInt(scrollY*scrollMultiplier-scrollOffset);
+    homeAnimation.goToAndStop(animationFrame>0?animationFrame:0,true)
+
+
     let mobileAnimationElement = document.getElementById('home-animation-mobile');
+
+    //TODO: previous mobile scroll animation
     if(scrollY>=(mobileAnimationElement.offsetTop - mobileAnimationElement.offsetHeight/2) && !initialScrollMobile){
         homeAnimationMobile.play();
         initialScrollMobile=true;
     }
+
+    //TODO: new mobile scroll animation
+
+    let mobileScrollMultiplier = 0.8;
+    let mobileScrollOffset = 200;
+    let mobileAnimationFrame =
+        parseInt(scrollY*mobileScrollMultiplier-mobileScrollOffset)>homeAnimationMobile.getDuration(true)
+            ?
+            homeAnimationMobile.getDuration(true)
+            :
+            parseInt(scrollY*mobileScrollMultiplier-mobileScrollOffset);
+    homeAnimationMobile.goToAndStop(mobileAnimationFrame>0?mobileAnimationFrame:0,true)
+
 
     //TODO: product scroll animation - right>left
     products.forEach((product)=>{
@@ -364,7 +398,7 @@ const scrollHandler = (e,{products=[],services=[]}) => {
     slideInTransition({
         id:'footer',
         axis:'Y',
-        offset: 100
+        offset: 0
     })
 
     //TODO: what-we-do scroll animation - bottom>top
