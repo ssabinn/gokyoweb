@@ -358,10 +358,10 @@ const scrollHandler = (e,{products=[],services=[]}) => {
     let mobileAnimationElement = document.getElementById('home-animation-mobile');
 
     //TODO: previous mobile scroll animation
-    if(scrollY>=(mobileAnimationElement.offsetTop - mobileAnimationElement.offsetHeight/2) && !initialScrollMobile){
-        homeAnimationMobile.play();
-        initialScrollMobile=true;
-    }
+    // if(scrollY>=(mobileAnimationElement.offsetTop - mobileAnimationElement.offsetHeight/2) && !initialScrollMobile){
+    //     homeAnimationMobile.play();
+    //     initialScrollMobile=true;
+    // }
 
     //TODO: new mobile scroll animation
 
