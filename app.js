@@ -98,7 +98,7 @@ const dropdownElement = (products=[]) => {
     element.innerHTML=`
     <div class="container">
     ${
-        products.map((product)=>`<a href="#${product.name}" class="dropdown-item no-underline">
+        products.map((product)=>`<a href="${product.links.demo}" class="dropdown-item no-underline">
 <div>
 <img src="${product.iconLargeUrl}"/>
 <div>
