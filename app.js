@@ -365,8 +365,8 @@ const scrollHandler = (e,{products=[],services=[]}) => {
 
     //TODO: new mobile scroll animation
 
-    let mobileScrollMultiplier = 0.8;
-    let mobileScrollOffset = 200;
+    let mobileScrollMultiplier = 0.7;
+    let mobileScrollOffset = 100;
     let mobileAnimationFrame =
         parseInt(scrollY*mobileScrollMultiplier-mobileScrollOffset)>homeAnimationMobile.getDuration(true)
             ?
