@@ -216,9 +216,9 @@ const footerElement = ({title, email, address, copyright, products=[]}) =>{
         <div class="footer-menu-item">
             <div class="footer-item-label">Links</div>
             ${
-            products.map((product)=>`<div class="footer-item-menu bold">    
+            products.map((product)=>`<a href="${product.links.view}" class="footer-item-menu bold no-underline inverse">    
             ${product.name}
-            </div>
+            </a>
         `).join('')
                 }
         </div>
